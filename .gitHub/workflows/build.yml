@@ -1,0 +1,22 @@
+name: Build SymPSX
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Symbian SDK
+        run: |
+          echo "Symbian SDK setup placeholder"
+      - name: Build .sis
+        run: |
+          echo "Compile sysps1.mmp -> sysps1.sis"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: sysps1-sis
+          path: ./build/sysps1.sis
